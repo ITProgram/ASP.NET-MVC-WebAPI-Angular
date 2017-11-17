@@ -9,31 +9,19 @@ namespace ASP.NET_MVC_WebAPI_Angular.Controllers
 {
     public class ShopController : Controller
     {
-        private IShopRepository shopRepository;
-        private IGoodsRepository goodsRepository;
+        private UnitOfWork unitOfWork = new UnitOfWork();
 
-        public ShopController()
-        {
-            this.shopRepository = new ShopRepository(new ShopContext());
-            this.goodsRepository = new GoodsRepository(new ShopContext());
-        }
-        public ShopController(IShopRepository shopRepository, IGoodsRepository goodsRepository)
-        {
-            this.shopRepository = shopRepository;
-            this.goodsRepository = goodsRepository;
-        }
-        //private ShopContext db = new ShopContext();
         public ActionResult Index()
         {
-            return View(shopRepository.GetShops());
+            return View(unitOfWork.ShopRepository.Get());
         }
         public ActionResult Goods()
         {
-            return View(goodsRepository.GetGoods());
+            return View(unitOfWork.GoodsRepository.Get());
         }
         public ActionResult Shops()
         {
-            return View(shopRepository.GetShops());
+            return View(unitOfWork.ShopRepository.Get());
         }
 
         public ActionResult About()
