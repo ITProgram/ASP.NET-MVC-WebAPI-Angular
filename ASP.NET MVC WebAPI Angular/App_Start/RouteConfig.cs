@@ -16,7 +16,7 @@ namespace ASP.NET_MVC_WebAPI_Angular
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "shop", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
