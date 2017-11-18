@@ -179,8 +179,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\Components\table-goods\table-goods.component.css" />
+    <Content Include="app\Components\table-goods\table-goods.component.html" />
+    <Content Include="app\app.component.html" />
+    <Content Include="app\Components\table-shops\table-shops.component.html" />
+    <Content Include="app\Components\table-shops\table-shops.component.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\loading.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -241,6 +247,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\Components\table-goods\goods.model.ts" />
+    <TypeScriptCompile Include="app\Components\table-goods\goods.service.ts" />
+    <TypeScriptCompile Include="app\Components\table-goods\table-goods.component.ts" />
+    <TypeScriptCompile Include="app\Components\table-shops\shop.model.ts" />
+    <TypeScriptCompile Include="app\Components\table-shops\shop.service.ts" />
+    <TypeScriptCompile Include="app\Components\table-shops\table-shops.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <ItemGroup>

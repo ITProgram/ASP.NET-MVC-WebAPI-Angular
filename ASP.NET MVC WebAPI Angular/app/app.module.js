@@ -8,7 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
+var http_1 = require("@angular/common/http");
+var table_shops_component_1 = require("./Components/table-shops/table-shops.component");
+var table_goods_component_1 = require("./Components/table-goods/table-goods.component");
+var shop_service_1 = require("./Components/table-shops/shop.service");
+var goods_service_1 = require("./Components/table-goods/goods.service");
+var appRoutes = [
+    { path: '', redirectTo: 'shops', pathMatch: 'full' },
+    { path: 'shops', component: table_shops_component_1.TableShopsComponent },
+    { path: 'shops/:id/goods', component: table_goods_component_1.TableGoodsComponent },
+    { path: '**', redirectTo: 'shops' }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -16,8 +28,9 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpClientModule, router_1.RouterModule.forRoot(appRoutes, { enableTracing: true })],
+        declarations: [app_component_1.AppComponent, table_shops_component_1.TableShopsComponent, table_goods_component_1.TableGoodsComponent],
+        providers: [shop_service_1.ShopService, goods_service_1.GoodsService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

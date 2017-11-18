@@ -17,16 +17,7 @@ namespace ASP.NET_MVC_WebAPI_Angular.Controllers
     public class ShopsController : ApiController
     {
         private UnitOfWork unitOfWork = new UnitOfWork();
-
-        //GET: api/shops
-        [Route("")]
-        [HttpGet]
-        public IHttpActionResult GetShops()
-        {
-            return Json(unitOfWork.ShopRepository.Get());
-        }
-
-        // GET: api/shops/5
+       
         [Route("{id:int}")]
         [HttpGet]
         public IHttpActionResult GetShopByID(int id)
@@ -37,6 +28,13 @@ namespace ASP.NET_MVC_WebAPI_Angular.Controllers
                 return NotFound();
             }
             return Json(shop);
+        }
+        //GET: api/shops
+        [Route("")]
+        [HttpGet]
+        public IHttpActionResult GetShops()
+        {
+            return Json( unitOfWork.ShopRepository.Get());
         }
     }
 }

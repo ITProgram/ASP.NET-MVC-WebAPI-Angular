@@ -1,0 +1,19 @@
+﻿<h1>Shops</h1>
+<table class="table table-hover table-striped table-bordered" >
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Address</td>
+            <td>WorkingHours</td>
+            <td>Goods</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let shop of shops" >
+            <td>{{shop.Name}}</td>
+            <td>{{shop.Address}}</td>
+            <td>{{shop.WorkingHours}}</td>
+            <td><a routerLink="/shops/{{shop.ShopID}}/goods">Goods</a></td>
+        </tr>
+    </tbody>
+</table> 

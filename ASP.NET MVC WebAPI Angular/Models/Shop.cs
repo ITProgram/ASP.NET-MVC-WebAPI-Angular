@@ -12,7 +12,5 @@ namespace ASP.NET_MVC_WebAPI_Angular.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string WorkingHours { get; set; }
-        
-        //public virtual ICollection<Goods> Goods { get; set; }
     }
 }

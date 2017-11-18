@@ -10,19 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var http_1 = require("@angular/common/http");
+var shop_service_1 = require("./shop.service");
+var TableShopsComponent = (function () {
+    function TableShopsComponent(http, shopService) {
+        this.http = http;
+        this.shopService = shopService;
     }
-    AppComponent.prototype.ngOnInit = function () {
+    TableShopsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.shopService.getShops().subscribe(function (shops) { _this.shops = shops; });
     };
-    return AppComponent;
+    return TableShopsComponent;
 }());
-AppComponent = __decorate([
+TableShopsComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: './app.component.html'
+        selector: 'table-shops',
+        templateUrl: './table-shops.component.html'
     }),
-    __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+    __metadata("design:paramtypes", [http_1.HttpClient,
+        shop_service_1.ShopService])
+], TableShopsComponent);
+exports.TableShopsComponent = TableShopsComponent;
+//# sourceMappingURL=table-shops.component.js.map

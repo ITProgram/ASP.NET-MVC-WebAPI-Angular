@@ -1,0 +1,15 @@
+﻿<h1>Goods</h1>
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of goods">
+            <td>{{item.Name}}</td>
+            <td>{{item.Description}}</td>
+        </tr>
+    </tbody>
+</table> 

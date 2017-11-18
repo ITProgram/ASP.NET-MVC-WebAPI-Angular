@@ -6,19 +6,17 @@ using System.Web;
 
 namespace ASP.NET_MVC_WebAPI_Angular.DAL
 {
-//    public class ShopInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ShopContext>
-    public class ShopInitializer : System.Data.Entity.DropCreateDatabaseAlways<ShopContext>
-
+    public class ShopInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ShopContext>
     {
         protected override void Seed(ShopContext context)
         {
             var shops = new List<Shop>
             {
-            new Shop{ShopID=1, Name="Shop 1", Address="shop 1 address", WorkingHours="c 10:00 до 24:00" },
-            new Shop{ShopID=2, Name="Shop 2", Address="shop 2 address", WorkingHours="c 10:00 до 24:00" },
-            new Shop{ShopID=3, Name="Shop 3", Address="shop 3 address", WorkingHours="c 10:00 до 24:00" },
-            new Shop{ShopID=4, Name="Shop 4", Address="shop 4 address", WorkingHours="c 10:00 до 24:00" },
-            new Shop{ShopID=5, Name="Shop 5", Address="shop 5 address", WorkingHours="c 10:00 до 24:00" },
+            new Shop{ShopID=1, Name="Shop 1", Address="shop 1 address", WorkingHours="10:00 - 24:00" },
+            new Shop{ShopID=2, Name="Shop 2", Address="shop 2 address", WorkingHours="10:00 - 24:00" },
+            new Shop{ShopID=3, Name="Shop 3", Address="shop 3 address", WorkingHours="10:00 - 24:00" },
+            new Shop{ShopID=4, Name="Shop 4", Address="shop 4 address", WorkingHours="10:00 - 24:00" },
+            new Shop{ShopID=5, Name="Shop 5", Address="shop 5 address", WorkingHours="10:00 - 24:00" },
             };
             shops.ForEach(s => context.Shops.Add(s));
             context.SaveChanges();
@@ -34,12 +32,15 @@ namespace ASP.NET_MVC_WebAPI_Angular.DAL
             new Goods{GoodsID=7, Name="goods7",Description="description for goods 7",ShopID=3},
             new Goods{GoodsID=8, Name="goods8",Description="description for goods 8",ShopID=3},
             new Goods{GoodsID=9, Name="goods9",Description="description for goods 9",ShopID=3},
-            //new Student{FirstMidName="Nino",LastName="Olivetto",EnrollmentDate=DateTime.Parse("2005-09-01")}
+            new Goods{GoodsID=10, Name="goods10",Description="description for goods 10",ShopID=4},
+            new Goods{GoodsID=11, Name="goods11",Description="description for goods 11",ShopID=4},
+            new Goods{GoodsID=12, Name="goods12",Description="description for goods 12",ShopID=4},
+            new Goods{GoodsID=13, Name="goods13",Description="description for goods 13",ShopID=5},
+            new Goods{GoodsID=14, Name="goods14",Description="description for goods 14",ShopID=5},
+            new Goods{GoodsID=15, Name="goods15",Description="description for goods 15",ShopID=5},
             };
-
             goods.ForEach(s => context.Goods.Add(s));
             context.SaveChanges();
-            
         }
 
     }

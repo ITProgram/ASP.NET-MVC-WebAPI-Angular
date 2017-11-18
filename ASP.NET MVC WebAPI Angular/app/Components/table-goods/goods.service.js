@@ -10,19 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var http_1 = require("@angular/common/http");
+var GoodsService = (function () {
+    function GoodsService(http) {
+        this.http = http;
     }
-    AppComponent.prototype.ngOnInit = function () {
+    GoodsService.prototype.getGoods = function (id) {
+        return this.http.get("/api/shops/" + id + "/goods");
     };
-    return AppComponent;
+    return GoodsService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: './app.component.html'
-    }),
-    __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+GoodsService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.HttpClient])
+], GoodsService);
+exports.GoodsService = GoodsService;
+//# sourceMappingURL=goods.service.js.map
